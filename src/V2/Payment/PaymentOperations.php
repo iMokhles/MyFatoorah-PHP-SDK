@@ -295,10 +295,20 @@ class PaymentOperations extends MFConnect
         ];
 
         if (array_key_exists('RefundChargeOnCustomer', $params)) {
+            if (!is_bool($params['RefundChargeOnCustomer'])) {
+                throw new MFInvalidArgumentException(
+                    "RefundChargeOnCustomer accepts only true or false boolean values"
+                );
+            }
             $parameters['RefundChargeOnCustomer'] = $params['RefundChargeOnCustomer'];
         }
 
         if (array_key_exists('ServiceChargeOnCustomer', $params)) {
+            if (!is_bool($params['ServiceChargeOnCustomer'])) {
+                throw new MFInvalidArgumentException(
+                    "ServiceChargeOnCustomer accepts only true or false boolean values"
+                );
+            }
             $parameters['ServiceChargeOnCustomer'] = $params['ServiceChargeOnCustomer'];
         }
 

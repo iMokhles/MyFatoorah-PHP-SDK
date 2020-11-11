@@ -1,6 +1,11 @@
 # MyFatoorah-PHP-SDK
 MyFatoorah PHP SDK for MyFatoorah API V2
 
+<p align="center">
+    <br>
+    <a href="https://packagist.org/packages/imokhles/myfatoorah-php-sdk" title="Latest Version on Packagist"><img src="https://img.shields.io/packagist/v/imokhles/myfatoorah-php-sdk.svg?style=flat-square"></a>
+    <a href="https://packagist.org/packages/imokhles/myfatoorah-php-sdk" title="Total Downloads"><img src="https://img.shields.io/packagist/dt/imokhles/myfatoorah-php-sdk.svg?style=flat-square"></a>
+</p>
 
 ## Features
 

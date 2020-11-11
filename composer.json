@@ -1,0 +1,21 @@
+{
+    "name": "imokhles/myfatoorah-php-sdk",
+    "description": "MyFatoorah PHP SDK for MyFatoorah API V2",
+    "type": "library",
+    "require": {
+        "guzzlehttp/guzzle": "6.5.2"
+    },
+    "license": "GPLv3",
+    "authors": [
+        {
+            "name": "iMokhles",
+            "email": "mokhleshussien@aol.com"
+        }
+    ],
+    "minimum-stability": "stable",
+    "autoload": {
+        "psr-4": {
+            "iMokhles\\MyFatoorahAPI\\": "src/"
+        }
+    }
+}

@@ -2,9 +2,9 @@
 MyFatoorah PHP SDK for MyFatoorah API V2
 
 
-### Features
+## Features
 
-[x] Payment Operations
+#### Payment Operations
 * Initiate Payment
 * Execute Payment
 * Offline Payment
@@ -17,11 +17,11 @@ MyFatoorah PHP SDK for MyFatoorah API V2
 * Pay With Token
 * Refund Payment
 
-[x] List Operations
+#### List Operations
 * Get Banks
 * Get Currencies Exchange List
 
-[x] Shipping Operations ( not tested )
+#### Shipping Operations ( not tested )
 * Calculate Shipping Charge
 * Update Shipping Status
 * Request Pickup
@@ -30,7 +30,7 @@ MyFatoorah PHP SDK for MyFatoorah API V2
 * Get Cities List
 
 
-### Todo
+#### Todo
 * [ ] Clean and comment code
 * [ ] Improve exceptions handlers
 * [ ] Add tests and CI

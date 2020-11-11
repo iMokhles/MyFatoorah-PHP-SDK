@@ -1,6 +1,16 @@
 # MyFatoorah-PHP-SDK
 MyFatoorah PHP SDK for MyFatoorah API V2
 
+<p align="center">
+    <br>
+    <a href="https://packagist.org/packages/imokhles/myfatoorah-php-sdk" title="Latest Version on Packagist"><img src="https://img.shields.io/packagist/v/imokhles/myfatoorah-php-sdk.svg?style=flat-square"></a>
+    <a href="https://packagist.org/packages/backpack/crud" title="Total Downloads"><img src="https://img.shields.io/packagist/dt/backpack/crud.svg?style=flat-square"></a>
+    <a href="https://scrutinizer-ci.com/g/laravel-backpack/crud" title="Quality Score"><img src="https://img.shields.io/scrutinizer/g/laravel-backpack/crud.svg?style=flat-square"></a>
+    <a href="https://travis-ci.org/Laravel-Backpack/CRUD" title="Build Status"><img src="https://img.shields.io/travis/Laravel-Backpack/CRUD/master.svg?style=flat-square"></a>
+    <a href="https://styleci.io/repos/53581270" title="Style CI"><img src="https://styleci.io/repos/53581270/shield"></a>
+    <a href="https://scrutinizer-ci.com/g/laravel-backpack/crud/code-structure" title="Coverage Status"><img src="https://img.shields.io/scrutinizer/coverage/g/laravel-backpack/crud.svg?style=flat-square"></a>
+    <a href="LICENSE.md" title="Software License"><img src="https://img.shields.io/badge/License-dual-blue"></a>
+</p>
 
 ## Features
 

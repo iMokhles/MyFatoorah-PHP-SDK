@@ -7,6 +7,13 @@ MyFatoorah PHP SDK for MyFatoorah API V2
     <a href="https://packagist.org/packages/imokhles/myfatoorah-php-sdk" title="Total Downloads"><img src="https://img.shields.io/packagist/dt/imokhles/myfatoorah-php-sdk.svg?style=flat-square"></a>
 </p>
 
+
+## How to use
+
+Documentation will come later, till i finish it, check the tests folder
+
+* [SendPaymentTest.php](tests/iMokhles/MyFatoorahAPI/Test/PaymentOperations/SendPaymentTest.php)
+
 ## Features
 
 #### Payment Operations
@@ -38,7 +45,9 @@ MyFatoorah PHP SDK for MyFatoorah API V2
 #### Todo
 * [ ] Clean and comment code
 * [ ] Improve exceptions handlers
-* [ ] Add tests and CI
+* [X] Add tests
+* [ ] Add more tests
+* [ ] Add CI
 
 
 

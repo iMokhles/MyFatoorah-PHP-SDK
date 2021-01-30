@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Created by PhpStorm
  * FileName: PaymentOperations.php
@@ -23,7 +24,8 @@ class PaymentOperations extends MFConnect
      * @param $currencyIso
      * @return mixed|string
      */
-    public function initPayment($invoiceAmount, $currencyIso) {
+    public function initPayment($invoiceAmount, $currencyIso)
+    {
 
         $parameters = [
             'InvoiceAmount' => $invoiceAmount,
@@ -42,7 +44,8 @@ class PaymentOperations extends MFConnect
      * @param $params
      * @return mixed|string
      */
-    public function executePayment($paymentMethodId, $invoiceValue, $callBackUrl, $errorUrl, $params) {
+    public function executePayment($paymentMethodId, $invoiceValue, $callBackUrl, $errorUrl, $params)
+    {
 
         $parameters = [
             'PaymentMethodId' => $paymentMethodId,
@@ -51,56 +54,14 @@ class PaymentOperations extends MFConnect
             'ErrorUrl' => $errorUrl,
         ];
 
-        if (array_key_exists('CustomerName', $params)) {
-            $parameters['CustomerName'] = $params['CustomerName'];
-        }
-
-        if (array_key_exists('DisplayCurrencyIso', $params)) {
-            $parameters['DisplayCurrencyIso'] = $params['DisplayCurrencyIso'];
-        }
-
-        if (array_key_exists('MobileCountryCode', $params)) {
-            $parameters['MobileCountryCode'] = $params['MobileCountryCode'];
-        }
-
-        if (array_key_exists('CustomerMobile', $params)) {
-            $parameters['CustomerMobile'] = $params['CustomerMobile'];
-        }
-
-        if (array_key_exists('CustomerEmail', $params)) {
-            $parameters['CustomerEmail'] = $params['CustomerEmail'];
-        }
-
-        if (array_key_exists('Language', $params)) {
-            $parameters['Language'] = $params['Language'];
-        }
-
-        if (array_key_exists('CustomerReference', $params)) {
-            $parameters['CustomerReference'] = $params['CustomerReference'];
-        }
-
-        if (array_key_exists('CustomerCivilId', $params)) {
-            $parameters['CustomerCivilId'] = $params['CustomerCivilId'];
-        }
-
-        if (array_key_exists('UserDefinedField', $params)) {
-            $parameters['UserDefinedField'] = $params['UserDefinedField'];
-        }
-
-        if (array_key_exists('ExpireDate', $params)) {
-            $parameters['ExpireDate'] = $params['ExpireDate'];
-        }
-
-        if (array_key_exists('SupplierCode', $params)) {
-            $parameters['SupplierCode'] = $params['SupplierCode'];
-        }
-
-        if (array_key_exists('CustomerAddress', $params)) {
-            $parameters['CustomerAddress'] = $params['CustomerAddress'];
-        }
-
-        if (array_key_exists('InvoiceItems', $params)) {
-            $parameters['InvoiceItems'] = $params['InvoiceItems'];
+        $myfa_params = ['CustomerName', 'DisplayCurrencyIso', 'MobileCountryCode', 'CustomerMobile', 'CustomerEmail', 'Language', 'CustomerReference',
+         'CustomerCivilId', 'UserDefinedField', 'ExpireDate', 'SupplierCode', 'CustomerAddress', 'InvoiceItems'];
+ 
+        
+        foreach ($myfa_params as $myfa_param) {
+            if (array_key_exists($myfa_param, $params)) {
+                $parameters[$myfa_param] = $params[$myfa_param];
+            }
         }
 
         $url = $this->getUrl('ExecutePayment');
@@ -114,7 +75,8 @@ class PaymentOperations extends MFConnect
      * @param $params
      * @return mixed|string
      */
-    public function payWithCard($paymentUrl, $cardInfo, $params) {
+    public function payWithCard($paymentUrl, $cardInfo, $params)
+    {
         $parameters = [
             'paymentType' => 'card',
             'card' => $cardInfo,
@@ -147,7 +109,8 @@ class PaymentOperations extends MFConnect
      * @param $token
      * @return mixed|string
      */
-    public function payWithToken($paymentUrl, $token) {
+    public function payWithToken($paymentUrl, $token)
+    {
         $parameters = [
             'paymentType' => 'token',
             'token' => $token,
@@ -161,7 +124,8 @@ class PaymentOperations extends MFConnect
      * @param $params
      * @return mixed|string
      */
-    public function sendPayment($customerName, $invoiceValue, $params) {
+    public function sendPayment($customerName, $invoiceValue, $params)
+    {
 
         $notificationOption = 'LNK';
         if (array_key_exists('NotificationOption', $params)) {
@@ -174,57 +138,16 @@ class PaymentOperations extends MFConnect
             'InvoiceValue' => $invoiceValue,
         ];
 
+        $myfa_params = [
+            'DisplayCurrencyIso', 'MobileCountryCode', 'CustomerMobile', 'CustomerEmail', 'CallBackUrl', 'ErrorUrl', 'Language', 'CustomerReference',
+            'CustomerCivilId', 'UserDefinedField', 'ExpireDate','CustomerAddress', 'InvoiceItems'
+        ];
 
-        if (array_key_exists('DisplayCurrencyIso', $params)) {
-            $parameters['DisplayCurrencyIso'] = $params['DisplayCurrencyIso'];
-        }
 
-        if (array_key_exists('MobileCountryCode', $params)) {
-            $parameters['MobileCountryCode'] = $params['MobileCountryCode'];
-        }
-
-        if (array_key_exists('CustomerMobile', $params)) {
-            $parameters['CustomerMobile'] = $params['CustomerMobile'];
-        }
-
-        if (array_key_exists('CustomerEmail', $params)) {
-            $parameters['CustomerEmail'] = $params['CustomerEmail'];
-        }
-
-        if (array_key_exists('CallBackUrl', $params)) {
-            $parameters['CallBackUrl'] = $params['CallBackUrl'];
-        }
-
-        if (array_key_exists('ErrorUrl', $params)) {
-            $parameters['ErrorUrl'] = $params['ErrorUrl'];
-        }
-
-        if (array_key_exists('Language', $params)) {
-            $parameters['Language'] = $params['Language'];
-        }
-
-        if (array_key_exists('CustomerReference', $params)) {
-            $parameters['CustomerReference'] = $params['CustomerReference'];
-        }
-
-        if (array_key_exists('CustomerCivilId', $params)) {
-            $parameters['CustomerCivilId'] = $params['CustomerCivilId'];
-        }
-
-        if (array_key_exists('UserDefinedField', $params)) {
-            $parameters['UserDefinedField'] = $params['UserDefinedField'];
-        }
-
-        if (array_key_exists('ExpireDate', $params)) {
-            $parameters['ExpireDate'] = $params['ExpireDate'];
-        }
-
-        if (array_key_exists('CustomerAddress', $params)) {
-            $parameters['CustomerAddress'] = $params['CustomerAddress'];
-        }
-
-        if (array_key_exists('InvoiceItems', $params)) {
-            $parameters['InvoiceItems'] = $params['InvoiceItems'];
+        foreach ($myfa_params as $myfa_param) {
+            if (array_key_exists($myfa_param, $params)) {
+                $parameters[$myfa_param] = $params[$myfa_param];
+            }
         }
 
         $url = $this->getUrl('SendPayment');
@@ -237,7 +160,8 @@ class PaymentOperations extends MFConnect
      * @param $keyType
      * @return mixed|string
      */
-    public function getPaymentStatus($key, $keyType) {
+    public function getPaymentStatus($key, $keyType)
+    {
 
         $parameters = [
             'Key' => $key,
@@ -251,7 +175,8 @@ class PaymentOperations extends MFConnect
     /**
      * @return mixed|string
      */
-    public function getActiveRecurringPayment() {
+    public function getActiveRecurringPayment()
+    {
         $url = $this->getUrl('GetActiveRecurringPayment');
         return $this->get($url, [], $this->header);
     }
@@ -260,7 +185,8 @@ class PaymentOperations extends MFConnect
      * @param $recurringId
      * @return mixed|string
      */
-    public function cancelRecurringPayment($recurringId) {
+    public function cancelRecurringPayment($recurringId)
+    {
         $parameters = [
             'recurringId' => $recurringId,
         ];
@@ -273,7 +199,8 @@ class PaymentOperations extends MFConnect
      * @param $cardToken
      * @return mixed|string
      */
-    public function cancelCardToken($cardToken) {
+    public function cancelCardToken($cardToken)
+    {
         $parameters = [
             'token' => $cardToken,
         ];
@@ -288,7 +215,8 @@ class PaymentOperations extends MFConnect
      * @param $params
      * @return mixed|string
      */
-    public function makeRefund($key, $keyType, $params) {
+    public function makeRefund($key, $keyType, $params)
+    {
         $parameters = [
             'Key' => $key,
             'KeyType' => $keyType,
